@@ -30,3 +30,25 @@ function convertToRoman(num) {
   
   console.log(convertToRoman(4999))
   
+  /* Caesars CipherPassed
+One of the simplest and most widely known ciphers is a Caesar cipher, also known as a shift cipher. In a shift cipher the meanings of the letters are shifted by some set amount.
+
+A common modern use is the ROT13 cipher, where the values of the letters are shifted by 13 places. Thus A ↔ N, B ↔ O and so on. */
+function rot13(str) {
+    let alphabet ={
+      A:"N",B:"O",C:"P", D:"Q", E:"R", F:"S",G:"T", H:"U", I:"V", J:"W", K:"X", L:"Y", M:"Z", N:"A", O:"B", P:"C", Q:"D", R:"E", S:"F", T:"G", U:"H", V:"I", W:"J", X:"K", Y:"L", Z:"M"
+    }
+    let codeArr = str.split("");  
+    let decodedArr = [];
+    
+  
+    decodedArr = codeArr.map(el=>{
+      if(alphabet.hasOwnProperty(el)) {
+        el = alphabet[el];
+      } 
+      return el;
+    });
+  return decodedArr.join(""); 
+  }
+  
+  console.log(rot13("SERR YBIR?"));
